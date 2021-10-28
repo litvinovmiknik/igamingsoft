@@ -199,6 +199,15 @@
 
         $(function() {
             $("input[name='phone']").mask("8 999 999 99 99");
+        }); // Scroll
+
+        $(function() {
+            $('a[href^="#"]').on('click', function() {
+                var href = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(href).offset().top
+                }, 300);
+            });
         });
 
         /***/
@@ -236,7 +245,7 @@
     (function(module, exports) {
 
         $(function() {
-            $('.callback, .slogan__btn, .about-us__btn').on('click', function(e) {
+            $('.callback, .about-us__btn').on('click', function(e) {
                 e.preventDefault();
                 $('.popup-callback').css('display', 'flex');
             });
