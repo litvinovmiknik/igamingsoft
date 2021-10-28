@@ -176,6 +176,11 @@
         var _blocks_popup_success_popup_success_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
         /* harmony import */
         var _blocks_popup_success_popup_success_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/ __webpack_require__.n(_blocks_popup_success_popup_success_js__WEBPACK_IMPORTED_MODULE_3__);
+        /* harmony import */
+        var _blocks_features_features_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+        /* harmony import */
+        var _blocks_features_features_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(_blocks_features_features_js__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -272,6 +277,18 @@
                 $(this).hide();
             }).on('click', '.popup-success__container', function(e) {
                 e.stopPropagation();
+            });
+        });
+
+        /***/
+    }),
+    /* 5 */
+    /***/
+    (function(module, exports) {
+
+        $(function() {
+            $('.features__list').jScrollPane({
+                resizeSensor: true
             });
         });
 

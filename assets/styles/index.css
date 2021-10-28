@@ -695,6 +695,8 @@ table {
 }
 
 .features__list {
+    width: 525px;
+    height: 910px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -702,21 +704,41 @@ table {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    grid-gap: 28px;
     margin: 120px 0 0 auto;
     position: relative;
     z-index: 5;
+}
+
+.features__list .jspVerticalBar {
+    width: 6px;
+    height: auto !important;
+    background: transparent;
+    border-radius: 3px !important;
+}
+
+.features__list .jspTrack {
+    border-radius: 3px !important;
+}
+
+.features__list .jspDrag {
+    border-radius: 3px !important;
+    background: #2B96F3 !important;
 }
 
 .features__item {
     width: 100%;
     max-width: 525px;
     padding: 27px 20px;
+    margin-bottom: 28px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #232323;
     border-radius: 10px;
     position: relative;
+}
+
+.features__item:first-child {
+    margin-top: 14px;
 }
 
 .features__count {
@@ -2155,6 +2177,8 @@ table {
     }
 
     .features__list {
+        width: 100%;
+        max-width: 525px;
         margin-top: 30px;
         margin-left: 0;
     }
