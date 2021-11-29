@@ -284,14 +284,136 @@ table {
 
 .content {
     width: 100%;
-    max-width: 1150px;
-    padding: 0 20px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    max-width: 1110px;
     margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 40px;
     background: #F5F7FA;
+}
+
+.content>img {
+    display: block;
+    max-width: 100%;
+    margin: 30px auto;
+}
+
+.content__container {
+    width: 100%;
+    max-width: 760px;
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.content__container h1 {
+    font-family: 'Mont-Heavy', sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 55px;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.content__container h2 {
+    font-family: 'Mont-Heavy', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 33px;
+    color: #000;
+    margin: 33px 0 20px;
+    position: relative;
+}
+
+.content__container .number {
+    display: inline-block;
+    font-family: 'Mont-Heavy', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #2B96F3;
+    vertical-align: top;
+    margin-top: -18px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
+
+.content__container h3 {
+    font-family: 'Mont-Heavy', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000;
+}
+
+.content__container p {
+    font-family: 'Mont-SemiBold', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #525252;
+    margin-bottom: 20px;
+}
+
+.content__container ol {
+    list-style: decimal;
+    list-style-position: inside;
+    margin: 20px 0;
+}
+
+.content__container li {
+    font-family: 'Mont-SemiBold', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #525252;
+    margin-bottom: 10px;
+}
+
+.content__container li:last-child {
+    margin-bottom: 0;
+}
+
+.content__container li::marker {
+    color: #2B96F3;
+}
+
+.content__container ul {
+    list-style-image: url(../images/ul-marker.png);
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.content__container img {
+    display: block;
+    max-width: 100%;
+    margin: 30px auto;
+}
+
+.content__container .btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: 'Mont-SemiBold', sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background: #2B96F3;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 300px;
+    height: 60px;
+    margin: 30px 0;
 }
 
 .first {
@@ -3664,9 +3786,9 @@ table {
 }
 
 .table-content__title-icon {
+    margin: 0 0 0 auto !important;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    margin-left: auto;
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -3702,20 +3824,20 @@ table {
     font-family: 'Mont-SemiBold', sans-serif;
     font-weight: 600;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 22px !important;
     color: #2B96F3;
-    margin-bottom: 6px;
+    margin-bottom: 6px !important;
 }
 
 .table-content__item:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .table-content__link {
     font-family: 'Mont-SemiBold', sans-serif;
     font-weight: 600;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 22px !important;
     color: #2B96F3;
     text-decoration: none;
     padding-left: 10px;
@@ -3923,6 +4045,20 @@ table {
 }
 
 @media screen and (max-width: 575px) {
+    .content__container h1 {
+        font-size: 36px !important;
+        line-height: 40px !important;
+    }
+
+    .content__container .number {
+        left: -10px;
+    }
+
+    .content__container .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
     .nav {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
