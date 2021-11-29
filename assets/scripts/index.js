@@ -180,6 +180,26 @@
         var _blocks_features_features_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
         /* harmony import */
         var _blocks_features_features_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(_blocks_features_features_js__WEBPACK_IMPORTED_MODULE_4__);
+        /* harmony import */
+        var _blocks_games_games_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+        /* harmony import */
+        var _blocks_games_games_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/ __webpack_require__.n(_blocks_games_games_js__WEBPACK_IMPORTED_MODULE_5__);
+        /* harmony import */
+        var _blocks_games_tabs_games_tabs_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+        /* harmony import */
+        var _blocks_games_tabs_games_tabs_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/ __webpack_require__.n(_blocks_games_tabs_games_tabs_js__WEBPACK_IMPORTED_MODULE_6__);
+        /* harmony import */
+        var _blocks_video_popup_video_popup_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+        /* harmony import */
+        var _blocks_video_popup_video_popup_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/ __webpack_require__.n(_blocks_video_popup_video_popup_js__WEBPACK_IMPORTED_MODULE_7__);
+        /* harmony import */
+        var _blocks_table_content_table_content_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
+        /* harmony import */
+        var _blocks_table_content_table_content_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/ __webpack_require__.n(_blocks_table_content_table_content_js__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
 
 
 
@@ -289,6 +309,78 @@
         $(function() {
             $('.features__list').jScrollPane({
                 resizeSensor: true
+            });
+        });
+
+        /***/
+    }),
+    /* 6 */
+    /***/
+    (function(module, exports) {
+
+        $(function() {
+            $('.games__slider').bxSlider({
+                minSlides: 1,
+                maxSlides: 1,
+                moveSlides: 1,
+                pagerCustom: '.games__thumbs',
+                responsive: true,
+                touchEnabled: false
+            });
+        });
+
+        /***/
+    }),
+    /* 7 */
+    /***/
+    (function(module, exports) {
+
+        $(function() {
+            $('ul.games-tabs__caption').each(function(i) {
+                var storage = localStorage.getItem('tab' + i);
+
+                if (storage) {
+                    $(this).find('li').removeClass('active').eq(storage).addClass('active').closest('div.games-tabs').find('div.games-tabs__content').removeClass('active').eq(storage).addClass('active');
+                }
+            });
+            $('ul.games-tabs__caption').on('click', 'li:not(.active)', function() {
+                $(this).addClass('active').siblings().removeClass('active').closest('div.games-tabs').find('div.games-tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+                var ulIndex = $('ul.games-tabs__caption').index($(this).parents('ul.games-tabs__caption'));
+                localStorage.removeItem('tab' + ulIndex);
+                localStorage.setItem('tab' + ulIndex, $(this).index());
+            });
+        });
+
+        /***/
+    }),
+    /* 8 */
+    /***/
+    (function(module, exports) {
+
+        $(function() {
+            $('.video-btn').on('click', function() {
+                $('.video-popup').css('display', 'flex');
+                jQuery("iframe").each(function() {
+                    jQuery(this)[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                });
+            });
+            $('.video-popup').on('click', function() {
+                $(this).hide();
+                jQuery("iframe").each(function() {
+                    jQuery(this)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                });
+            });
+        });
+
+        /***/
+    }),
+    /* 9 */
+    /***/
+    (function(module, exports) {
+
+        $(function() {
+            $('.table-content__title').on('click', function() {
+                $(this).parent().toggleClass('active');
             });
         });
 
